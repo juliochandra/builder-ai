@@ -1,6 +1,6 @@
-import { Outlet, Navigate } from "react-router-dom";
-import { useAppContext } from "../context/AppContext";
+import { Navigate, Outlet } from "react-router-dom";
 import Loading from "../components/Loading";
+import { useAppContext } from "../context/AppContext";
 
 export const AuthLayout = () => {
 	const { user, loadingUser } = useAppContext();
