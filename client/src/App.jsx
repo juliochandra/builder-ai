@@ -1,8 +1,8 @@
-import { Routes, Route } from "react-router-dom";
-import { AuthLayout, GuestLayout } from "./pages/Layout";
+import { Navigate, Route, Routes } from "react-router-dom";
 import AuthPage from "./pages/AuthPage";
-import HomePage from "./pages/HomePage";
 import BuilderPage from "./pages/BuilderPage";
+import HomePage from "./pages/HomePage";
+import { AuthLayout, GuestLayout } from "./pages/Layout";
 import PreviewPage from "./pages/PreviewPage";
 
 const App = () => {
@@ -20,6 +20,9 @@ const App = () => {
 				<Route path="/builder/:id" element={<BuilderPage />} />
 				<Route path="/preview/:id" element={<PreviewPage />} />
 			</Route>
+
+			{/* catch all */}
+			<Route path="*" element={<Navigate to="/" replace />} />
 		</Routes>
 	);
 };
